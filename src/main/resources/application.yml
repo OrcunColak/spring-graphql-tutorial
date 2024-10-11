@@ -14,3 +14,5 @@ spring:
   graphql:
     graphiql:
       enabled: true
+#      Example to change the path
+#      path: /graphiql
