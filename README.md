@@ -33,6 +33,12 @@ mutation {
 
 ```
 curl -X POST http://localhost:8080/graphql -H "Content-Type: application/json" -d "{\"query\": \"mutation { addBook(title: \\\"New Book\\\", author: \\\"New Author\\\", publisher: \\\"New Publisher\\\", price: 19.99) { id title author } }\"}"
+curl -X POST http://localhost:8080/graphql -H "Content-Type: application/json" -d "{\"query\": \"mutation { updateBook(id: \\\"3\\\", title: \\\"Nineteen Eighty-Four\\\", author: \\\"George Orwell\\\") { id title author } }\"}"
+curl -X POST http://localhost:8080/graphql -H "Content-Type: application/json" -d "{\"query\": \"mutation { deleteBook(id: \\\"3\\\") { id title author } }\"}"
+curl -X POST http://localhost:8080/graphql -H "Content-Type: application/json" -d "{\"query\": \"mutation { deleteBook(id: \\\"3\\\") }\"}"
+
+
+
 
 ```
 
@@ -40,4 +46,8 @@ or
 
 ```
 curl -X POST http://localhost:8080/graphql -H "Content-Type: application/json" -d "{\"query\": \"query { books { id title author } }\"}"
+
+curl -X POST http://localhost:8080/graphql -H "Content-Type: application/json" -d "{\"query\": \"{ bookById(id: \\\"1\\\") { id title author } }\"}"
+
+
 ```
